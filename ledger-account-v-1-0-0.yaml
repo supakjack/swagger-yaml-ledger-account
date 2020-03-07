@@ -1,0 +1,913 @@
+swagger: '2.0'
+info:
+  description: Ledger Account Restful api Document
+  title: Ledger Account Restful Api
+  version: v.1.0.0
+host: localhost
+tags:
+  - name: 'book'
+    description: 'Everything about your ledger account book'
+    externalDocs:
+      description: 'Find out more'
+      url: 'https://github.com/supakjack'
+  - name: 'list'
+    description: 'Everything about your ledger account list'
+    externalDocs:
+      description: 'Find out more'
+      url: 'https://github.com/supakjack'
+  - name: 'person'
+    description: 'Everything about your ledger account person'
+    externalDocs:
+      description: 'Find out more'
+      url: 'https://github.com/supakjack'
+  - name: 'authen'
+    description: 'Everything about your ledger account authen'
+    externalDocs:
+      description: 'Find out more'
+      url: 'https://github.com/supakjack'
+schemes:
+  - https
+  - http
+basePath: /
+paths:
+  /books/amount/{id}:
+    get:
+      tags:
+        - 'book'
+      summary: Get amount of ledger account book by book id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The book id to return the response in, i.e. 1 '
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: ['amount': 125.50],
+              }
+          description: Success response data in array with code status
+
+  /books/income/{id}:
+    get:
+      tags:
+        - 'book'
+      summary: Get income of ledger account book by book id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The book id to return the response in, i.e. 1 '
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: ['income': 250.50],
+              }
+          description: Success response data in array with code status
+
+  /books/expense/{id}:
+    get:
+      tags:
+        - 'book'
+      summary: Get expense of ledger account book by book id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The book id to return the response in, i.e. 1 '
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: ['expense': 250.50],
+              }
+          description: Success response data in array with code status
+
+  /books/currency/{id}:
+    get:
+      tags:
+        - 'book'
+      summary: Get currency of ledger account book by book id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The book id to return the response in, i.e. 1 '
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: ['currency': 250.50],
+              }
+          description: Success response data in array with code status
+
+  /books/name/{id}:
+    get:
+      tags:
+        - 'book'
+      summary: Get name of ledger account book by book id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The book id to return the response in, i.e. 1 '
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: ['name': 'my first book'],
+              }
+          description: Success response data in array with code status
+
+  /books/income/date/now/{id}:
+    get:
+      tags:
+        - 'book'
+      summary: Get income date now of ledger account book by book id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The book id to return the response in, i.e. 1 '
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: ['income': 2500.50],
+              }
+          description: Success response data in array with code status
+
+  /books/currency/date/now/{id}:
+    get:
+      tags:
+        - 'book'
+      summary: Get income date now of ledger account book by book id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The book id to return the response in, i.e. 1 '
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: ['currency': 2500.50],
+              }
+          description: Success response data in array with code status
+
+  /books:
+    post:
+      tags:
+        - 'book'
+      summary: Add book of ledger account book by name , amount and currency.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: 'body'
+          example:
+            { 'name': 'my first book', 'amount': 250, 'currency': 'Bath' }
+          required: true
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 201
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 201,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data:
+                  [
+                    {
+                      'name': 'my first book',
+                      'amount': 250,
+                      'currency': 'Bath',
+                    },
+                  ],
+              }
+          description: Success response data in array with code status
+
+  /books/{id}:
+    put:
+      tags:
+        - 'book'
+      summary: Update book of ledger account book by book id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The book id to return the response in, i.e. 1 '
+        - in: 'body'
+          example: { 'name': 'my first book', 'amount': 250 }
+          required: true
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: [{ 'name': 'my first book', 'amount': 250 }],
+              }
+          description: Success response data in array with code status
+
+    delete:
+      tags:
+        - 'book'
+      summary: Update book of ledger account book by book id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The book id to return the response in, i.e. 1 '
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+      responses:
+        '204':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 204
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+          examples:
+            application/json:
+              {
+                'code': 204,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: [{ 'id': 1 }],
+              }
+          description: Success response data in array with code status
+
+  /lists/income:
+    post:
+      tags:
+        - 'list'
+      summary: Add income of list account book by book id , money and descript.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: 'body'
+          example: { 'money': '100', 'descript': 'mother give me' }
+          required: true
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 201
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 201,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: [{ 'money': '100', 'descript': 'mother give me' }],
+              }
+          description: Success response data in array with code status
+
+  /lists/expense:
+    post:
+      tags:
+        - 'list'
+      summary: Add expense of list account book by book id , money and descript.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: 'body'
+          example: { 'money': '100', 'descript': 'eat snack' }
+          required: true
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 201
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 201,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: [{ 'money': '100', 'descript': 'eat snack' }],
+              }
+          description: Success response data in array with code status
+
+  /persons/active/{id}:
+    patch:
+      tags:
+        - 'person'
+      summary: active to calculate all book by person id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The person id to return the response in, i.e. 1 '
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: [{ 'status': 'active' }],
+              }
+          description: Success response data in array with code status
+
+  /persons/deactive/{id}:
+    patch:
+      tags:
+        - 'person'
+      summary: deactive to calculate all book by person id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The person id to return the response in, i.e. 1 '
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: [{ 'status': 'deactive' }],
+              }
+          description: Success response data in array with code status
+
+  /authens/{id}:
+    get:
+      tags:
+        - 'authen'
+      summary: Get Authen data of ledger account book by facebook id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: 'body'
+          example: { 'id': 123456789 }
+          required: true
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: [{ 'authenId': 1 }, { 'personId': 1 }],
+              }
+          description: Success response data in array with code status
+
+  /authens/facebook/{id}:
+    get:
+      tags:
+        - 'authen'
+      summary: Get id to check of ledger account book by facebook id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: string
+          minimum: 12345678910
+          description: 'The facebook id to return the response in, i.e. 12345678910 '
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 200
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 200,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: ['id': true],
+              }
+          description: Success response data in array with code status
+
+    delete:
+      tags:
+        - 'authen'
+      summary: Delete account of ledger account book by authen id.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: path
+          required: true
+          name: id
+          type: integer
+          minimum: 1
+          description: 'The authen id to return the response in, i.e. 1 '
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: 'body'
+          example: { 'id': 1 }
+          required: true
+      responses:
+        '204':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 204
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+          examples:
+            application/json:
+              {
+                'code': 204,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: [{ 'name': 'my first book', 'amount': 250 }],
+              }
+          description: Success response data in array with code status
+
+  /authens/facebook:
+    post:
+      tags:
+        - 'authen'
+      summary: Add facebook id of ledger account book.
+      parameters:
+        - in: header
+          name: accept-version
+          type: number
+          description: 'The version of api, i.e. 1.0.0 , 2.0.0.'
+          default: 1.0.0
+        - in: 'body'
+          example: { 'id': 123456789 }
+          required: true
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+                example: 201
+              version:
+                type: string
+                example: '1.0.0'
+              message:
+                type: string
+                example: 'Success response'
+              data:
+                type: array
+                items:
+                  type: object
+                  # properties:
+                  #   code:
+                  #     type: integer
+                  #   version:
+                  #     type: integer
+          examples:
+            application/json:
+              {
+                'code': 201,
+                'version': '1.0.0',
+                'message': 'Success response',
+                data: [{ 'id': 123456789 }],
+              }
+          description: Success response data in array with code status
